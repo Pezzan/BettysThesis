@@ -122,3 +122,4 @@ venv.bak/
 # compressed
 *.zip
 *.p
+*.db
