@@ -117,9 +117,20 @@ venv.bak/
 
 # images
 *.jpg
+*.jpeg
 *.png
 
 # compressed
 *.zip
 *.p
 *.db
+*.gz
+
+# tex
+*.aux
+*.lot
+*.lof
+*.out
+*.pdf
+*.toc
+
