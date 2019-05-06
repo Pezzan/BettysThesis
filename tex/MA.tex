@@ -32,7 +32,7 @@
 \usepackage{chemmacros}
 \usepackage{elements}
 \usepackage[explicit]{titlesec}
-
+\usepackage{booktabs}
 
 % links
 \definecolor{darkblue}{rgb}{0.0,0.0,0.4}
@@ -79,9 +79,9 @@ Several solution-based processes exist with the aim of producing highly oriented
 
 As functional material, we have selected a conjugated polymer named DPP-DTT belonging to the class of Donor-Acceptor (D-A) polymers. Such polymers, having an alternating donor-acceptor unit, have become recently of great interest, especially for OFETs and solar cells. In particular, the work done by side-chain engineering has led to an effective and successful acceptor unit based on diketopyrrolopyrrole (DPP), which has been the starting point for several kind of polymer structures and studies\cite{art:DA}. A meaningful property that these polymers have shown is ambipolarity, i.e. the ability to simultaneously transport electrons and holes, demonstrating to have a huge potential for several applications in organic electronics. Indeed, they have incredibly improved the performance of both transistors and solar cells, becoming really competitive with inorganic semiconductors and opening the view to new scenarios of technology. The choice of DPP-DTT as organic semiconductor has been motivated by its promising properties widely demonstrated in literature. It has been shown that ambipolar OFETs based on a single solution-processed DPP-DTT have high, balanced electrons and holes mobilities exceeding \SI{1}{\square\centi\metre\per\volt\per\second} for both electrons and holes\cite{art:dppmob}\cite{art:dppmob2017}. Furthermore, S. Schott et al.\cite{art:DPPBTz} have shown that OFETs based on DPP-BTz, a D-A polymer with similar properties as DPP-DTT\cite{art:dppmob2017}, coated by shearing process, have achieved mobilities of \SI{6.7}{\square\centi\metre\per\volt\per\second} along the chain direction of the polymer, which is much higher than the ones obtained by spin-coating\cite{art:dppmobSC}.\\
 
-In this thesis we have explored for the first time the electrical and optical properties of thin films of uniaxially-aligned DPP-DTT coated by blade coating. Since this technique involves several parameters, including the parameters of the machine and different solvents, we have started with a study on the morphology of the films and the optimization of the process by using Polystyrene (PS) as functional material, since it is a polymer commercially widely available and it is quite cheap, so as to test a wide range of parameters and having a deeper knowledge of the kinetics of the process, which is the best solvent combination and to find the best parameters of the machine that can produce the best alignment of the polymer.\\
+In this thesis we have explored for the first time the electrical and optical properties of thin films of uniaxially-aligned DPP-DTT coated by blade coating. Since this technique involves several parameters, including the parameters of the machine and different solvents, we have started with a study on the morphology of the films and the optimization of the process by using Polystyrene (PS) as functional material, since it is a polymer commercially widely available and it is quite cheap, so as to test a wide range of parameters and to have a deeper knowledge of the kinetics of the process, the best solvent combination and the best parameters of the machine for the optimal alignment of the polymer.\\
 
-In order to give a general notion of the physics contained in this work, we will talk about the main properties of organic semiconductors and the different methods for alignment in Chapter \ref{cha:theory}. In Chapter \ref{cha:experimental} we will explain the experimental method with details on blade coating technique, the solvents and the functional materials used. As following, in Chapter \ref{cha:results}, we will show the results of the study on the morphology of the films and the optimization of the blade coating with PS. Then, we will show the results of the alignment of DPP-DTT, its electrical properties measured in a gap-type geometry and the optical characterization done by spectroscopy. As last, in Chapter \ref{cha:conclusions}, we will discuss about conclusions and outlook.
+In order to give a general notion of the physics contained in this work, we will talk about the main properties of organic semiconductors and the different methods for alignment in Chapter \ref{cha:theory}. In Chapter \ref{cha:experimental} we will explain the experimental method with details on blade coating technique, the solvents and the functional materials used. As following, in Chapter \ref{cha:results}, we will show the results of the study on the morphology of the films and the optimization of the blade coating process with PS. Then, we will show the results of the alignment of DPP-DTT, its electrical properties measured in a gap-type geometry and the optical characterization done by spectroscopy. As last, in Chapter \ref{cha:conclusions}, we will discuss about conclusions and outlook.
 
 %finish to say why D-A polymers,i.e. in comparison to p3ht, and why DPP-based polymers.
 
@@ -120,7 +120,7 @@ At its ground state, a carbon atom owns six electrons distributed over different
 	\caption{\footnotesize (a) The singlet states $S_0$, $S_1$ and the triplet state $T_1$ in an orbital diagram showing the electrons for each orbital and their spin configuration. The different positions of the $\pi^*$ and $\pi$ energy levels are the result of taking into account the Coulomb interactions between electrons\cite{book:koehler} (b) Graph showing the energy levels and the optical gap of a $\pi$-conjugated molecule\cite{book:brutting}.}
 	\label{fig:electronic2}
 \end{figure}
-The wavefunction $\Psi$ has to satisfy the Schr\"odinger equation where the Hamiltonian need to consider the sum of kinetic energy of the electron and the potential energy given by: the repulsion between the different nuclei in in the molecule; the interaction between the electron and the nuclei; interaction between electrons such as Coulomb repulsion and spin. Furthermore, it is necessary to consider the vibrational motion of the nuclei in the molecule, that can be considered as quantum harmonic oscillators. This is commonly done by the \emph{Born-Oppenheimer approximation} that calculate the total wavefunction of the molecular state as $\Psi_{total}=\Psi_{el}\Psi_{spin}\Psi_{vibr}$, where $\Psi_{molecule}$ is the wavefunction of the many-electron electronic wavefuntion given by $\sum_{i}\Psi_{molecule,i}$, $\Psi_{spin}$ is the total spin wavefunction and $\Psi_{vibr}$ is the vibrational wavefunction. This approximation leads to the description of the related phenomenon indicated by the so-called \emph{Frank-Condon principle}, explained more in detail in Chapter \ref{cha:properties}. Such principle explains the change of the vibrational energy level during electronic transition due to the absorption or emission of a photon, describing the organic semiconductor's molecules as a system of coupled oscillators with many normal modes. The energies of the different vibrational modes can be measured by Raman spectroscopy, Fourier Transform Infrared spectroscopy (FTIR) and have an impact on the absorption and fluorescence spectra. Concerning the calculation of the total spin wavefunction, one need just to consider the unpaired electrons of an excited state configuration, since the contribution from the electrons in filled orbitals following the Pauli principle contribute zero to the total spin. Differently from their inorganic counterparts, organic semiconductors are characterized by the existence of well-defined spin states like in isolated molecules as result of the weak electronic delocalization, which have a huge impact on the photophysics of the material. Talking about different spin states of the molecule, we can mainly distinguish between singlet state and triplet state. As shown in Figure \ref{fig:spin}, under the assumption that one electron is in the $\pi^*$ orbital of the molecule and one in the $\pi$ orbital, we can define a singlet state when the electrons are antiparallel and triplet state when parallel. The different excited states are numbered in order of increasing energy as $S_0$, $S_1$ for the singlet, $T_1$ for the triplet, etc.\\
+The wavefunction $\Psi$ has to satisfy the Schrödinger equation where the Hamiltonian need to consider the sum of kinetic energy of the electron and the potential energy given by: the repulsion between the different nuclei in in the molecule; the interaction between the electron and the nuclei; interaction between electrons such as Coulomb repulsion and spin. Furthermore, it is necessary to consider the vibrational motion of the nuclei in the molecule, that can be considered as quantum harmonic oscillators. This is commonly done by the \emph{Born-Oppenheimer approximation} that calculate the total wavefunction of the molecular state as $\Psi_{total}=\Psi_{el}\Psi_{spin}\Psi_{vibr}$, where $\Psi_{molecule}$ is the wavefunction of the many-electron electronic wavefuntion given by $\sum_{i}\Psi_{molecule,i}$, $\Psi_{spin}$ is the total spin wavefunction and $\Psi_{vibr}$ is the vibrational wavefunction. This approximation leads to the description of the related phenomenon indicated by the so-called \emph{Frank-Condon principle}, explained more in detail in Chapter \ref{cha:properties}. Such principle explains the change of the vibrational energy level during electronic transition due to the absorption or emission of a photon, describing the organic semiconductor's molecules as a system of coupled oscillators with many normal modes. The energies of the different vibrational modes can be measured by Raman spectroscopy, Fourier Transform Infrared spectroscopy (FTIR) and have an impact on the absorption and fluorescence spectra. Concerning the calculation of the total spin wavefunction, one need just to consider the unpaired electrons of an excited state configuration, since the contribution from the electrons in filled orbitals following the Pauli principle contribute zero to the total spin. Differently from their inorganic counterparts, organic semiconductors are characterized by the existence of well-defined spin states like in isolated molecules as result of the weak electronic delocalization, which have a huge impact on the photophysics of the material. Talking about different spin states of the molecule, we can mainly distinguish between singlet state and triplet state. As shown in Figure \ref{fig:spin}, under the assumption that one electron is in the $\pi^*$ orbital of the molecule and one in the $\pi$ orbital, we can define a singlet state when the electrons are antiparallel and triplet state when parallel. The different excited states are numbered in order of increasing energy as $S_0$, $S_1$ for the singlet, $T_1$ for the triplet, etc.\\
 
 A critical role in the optical and electrical processes of the organic conjugated molecules is played by the so-called \emph{frontier orbitals}: the highest occupied molecular orbital (HOMO) and the lowest unoccupied molecular orbital (LUMO). They are a convenient approximation of the ionization potential (IP) and the electron affinity (EA) since HOMO and LUMO are described by one-electron molecular orbitals and do not consider electron-electron interactions. Indeed, the difference between HOMO and LUMO with the vacuum energy level differ from experimentally measured IP and EA because they are different for free molecules in solid due to the polarization of the environment, leading to a difference in energy of about \SI{1.2}{\electronvolt}. When a transition from HOMO to LUMO occurs, the molecule changes from the ground state to the excited state. If the transition occurs under the excitation of a photon, the energy gap is now an optical gap (Figure \ref{fig:excitation}). Then, the lower is the difference between the energies of HOMO and LUMO, i.e. the band gap, the more easy the molecule can be excited. Compared to $\sigma$ and $\sigma^*$ orbitals, it is the weaker splitting of $\pi$ and $\pi^*$ orbitals and the relatively small band gap that lead to low-energy electronic excitations and, as result, to a semiconductor behaviour. The transition of an electron from the HOMO to the LUMO implies absorption of light (emission for the vice-versa). However, the energy level of an optical excited electron result to be less the LUMO since the Coulomb force bound the electron to the hole left in HOMO, leading to energy difference of several \SI{100}{\milli\electronvolt}. Such Coulomb attractions are significant for organic semiconductors, since the dielectric constant is much lower than the one of inorganic semiconductors. Since the $\pi$-bonding is significantly weaker than the $\sigma$ bonds, the $\pi-\pi^*$ transitions represent the lowest electronic excitations of conjugated molecules with a typical energy gap between \SI{1.5}{\electronvolt} and \SI{3}{\electronvolt}, leading to light absorption or emission in the visible spectral range. By contrast, if the HOMO and LUMO correspond to $\sigma$ orbitals, the optical emission due to $\sigma\rightarrow\sigma^*$ transitions will be in the ultraviolet range. The energy gap of conjugated polymers can be chemically controlled, for example, by varying the degree of conjugation in a molecule, offering a wide range of possibilities to tune the optical and electrical properties of the material as organic semiconductor. \\
 
@@ -234,53 +234,413 @@ n \approx Nexp\Big(-\frac{E_G}{2k_BT}\Big)
 \end{equation}
 For crystalline undoped silicon at room temperature, the carrier density is of the order of \SI{e10}{\per\centi\meter\cubed} thanks to the low band gap of \SI{1.1}{\electronvolt} and the mobility is given by \SI{1000}{\centi\meter\squared\per\volt\per\second}. In organic semiconductors, since the band gap is usually larger than \SI{2}{\electronvolt}, the carrier density is very low and it is of the order of \SI{10}{\per\centi\meter\cubed} and the mobility of around \SI{1}{\centi\meter\squared\per\volt\per\second}. In general, for organic semiconductors, the conductivity is very low and the conductance is often determined by extrinsic charge carriers given by doping or injection from the electrodes. Indeed, for carrier enriched organic semiconductors, the mobility is typically larger. 
 
-\paragraph{Charge-carrier transport} 
+\paragraph{Charge-carrier transport} %current
 
-
-%////////////////////////////////////////////CRYSTALS//////////////////////////////////////////////////////////////////////// 	
-	\section{Crystalline conjugated polymers}
-	%solid state structure, PS
-	%diode eq!
 %///////////////////////////////////////ANISOTROPY//////////////////////////////////////////////////////////////////////
 	\section{Anisotropy in Organic Semiconductors}
 	%PL, absorbance, charge transport, dichroic ratio, photocurrent....
 	
 %////////////////////////////////////////////METHODS FOR ALIGNMENT//////////////////////////////////////////////////////////////////////// 	
-	\section{Methods fo Alignment}{sec:methods}
-	%explain nucleation and epitaxial growth and all the different cases that we can find in the coating process
-	%degree of crystallinity, spectroscopy
-	%properties of semicrystalline polymers
+	\section{Methods for Alignment}{sec:methods}
+	%explain nucleation and epitaxial growth and all the different cases that we can find in the coating process, crystalline template method
+	%different techniques and differences---->advantage of Doctor Blading
 	It has been shown that the preferential orientation of the polymer chains increases the charge mobility in both the parallel and the normal direction with respect to the orientation axis.
-		
-		\subsection{Impact on the Electrical and Optical Properties}
-		
+		\subsection{Different Morphologies in thin films}
+		%da review
+		\subsection{Impact of Alignment on the Electrical and Optical Properties}
+		%grafici presentazione
 		\subsection{Polarization}
+		%esempio di Tobi
+%in generale alla intro: vedi quaderno!! esempi nel caso di D-A polymers		
 		
-		
-		
+	study the morphology of thin films and the optimization of blade coating 
+	
 		
 %-----------------------------------------EXPERIMENTAL METHODS------------------------------------------------ 	
 		
-\chapter{Methods and experimental details}\label{cha:experimental}
+\chapter{Materials and experimental methods}\label{cha:experimental}
+
+In this chapter, we will describe the materials used in this thesis and we explore the experimental process used in order to produce the alignment of the polymer. As first, it is necessary to talk about the materials used as functional inks for the blade coating, i.e. the functional polymer, the solid solvent used as crystalline template and the liquid solvent.
+Then, we in Chapter \ref{sec:PS} will introduce Polystyrene (PS) as functional material, a polymer commercially widely available and cheap that have allowed us to test a wide range of parameters. Such polymer has been exploited in order to have a deeper knowledge of the kinetics of film deposition for different coating parameters and its availability allowed us to test and find the best solvent combination among several mixtures of crystalline templates and liquid solvents. In Chapter \ref{sec:solubility}, we show our study on the solubility and the concentration of saturation of six different crystalline templates. Then, we will present the semiconductor of our interests, i.e. DPP-DTT, a D-A polymer .....%describe it a bit
+of which we will study the electrical and optical properties. The blade coating process and the kinetics behind a controlled deposition of the film are described in detail in Chapter \ref{sec:coating}.\\ 
+
 	\section{Materials}
-	\section{Blade Coating}
+	
+		\subsection{Polystyrene}\label{sec:PS}
+		
+		\subsection{Solubility tests}\label{sec:solubility}
+		The goal was to test different solutions for the PS. First, we made a solubility test for $36$ different mixtures of solvents. Each solution was made of two different solvents, a solid solvent (crystallisable) and a liquid one used as carrier. The aim of adding a solid solvent is to have a template that drives the crystallisation of the PS when the liquid solvent evaporates along the coating direction. The complete selection of solvents used is shown in Table \ref{tab:solids} and \ref{tab:liquids}.\\
+
+We prepared some PS-solutions made at the \SI{10}{\percent} under the saturation level of the solid solvent used for that mixture. For doing this, we dissolved the solid solvent in a liquid solvent for getting a saturated solution (i.e. we have reached a solution with a solid precipitate). Afterwards, we dissolved the PS at \SI[per-mode=symbol]{100}{\gram\per\liter} (whose value was fixed) in a solution made of the previous saturated solution for the \SI{90}{\percent} and of the corresponding pure liquid solvent for the \SI{10}{\percent} . This leads to a solution of PS at \SI[per-mode=symbol]{100}{\gram\per\liter} with a solid solvent at the \SI{10}{\percent} under the saturation level. 
+
+The higher is the concentration of the crystallisable solvent the easier the driven-crystallisation of the PS should be. On the other hand, it is not convenient to use a solution at the saturation point or higher because the ink would be an unstable solution, leading to the formation of a precipitate and making the deposition of the ink too hard, expecially if one want to use a pipet (the solid solvent crystalizes on the internal walls of the tip leading to an occlusion).\\
+
+\begin{table*}[tb]\scriptsize
+	\caption{\small Selection of solid solvents used.}
+	\label{tab:solids}
+	~\\
+	\centering
+	\begin{tabular}{ccc}
+		\textbf{Solvent 1} & \textbf{MP ($^\circ C$)} & \textbf{BP ($^\circ C$)}\\
+		\hline
+		1,3,5-Trichlorobenzene (1,3,5-TCB) & $63.4$ & $209$\\
+		1,2,3-Trichlorobenzene (1,2,3-TCB) & $53$ & $218.5$\\
+		1,3,5-Tribromobenzene (1,3,5-TBB) & $119$ & $271$\\
+		1,2,4,5-Tetrachlorobenzene (1,2,4,5-TCB) & $139$ & $243$\\
+		1,2,3,4-Tetrachlorobenzene (1,2,3,4-TCB) & $47$ & $254$\\
+		Hexamethylbenzene (HMB) & $165$ & $265.3$\\
+		\hline
+	\end{tabular}
+\end{table*}
+
+\begin{table*}[tb]\scriptsize
+	\caption{\small Selection of liquid solvents used.}
+	\label{tab:liquids}
+	~\\
+	\centering
+	\begin{tabular}{cc}
+		\textcolor{blue}{\textbf{Solvent 2}} & \textcolor{blue}{\textbf{BP ($^\circ C$)}}\\
+		\hline
+		\textcolor{blue}{Chlorobenzene} & $131.7$\\
+		\textcolor{blue}{Chloroform} & $61.7$\\
+		\textcolor{blue}{2-Decanone} & $215.5$\\
+		\textcolor{blue}{2-Octanone} & $173.5$\\
+		\textcolor{blue}{Dihexyl Ether} & $228.5$\\
+		\textcolor{blue}{4-Ethylcyclohexanone} & $193.5$\\
+		\hline
+	\end{tabular}
+\end{table*}
+
+In order to measure the concentration of saturation of the different mixtures of solvents, we have used the following approach: first, we weight the solid solvent with the balance so as get the right mass for a very high final concentration (i.e. \SI[per-mode=symbol]{3000}{\gram\per\liter} ); second, we proceed by dilution, using a resolution of \SI{10}{\mu L} when we are very close to the saturation point (for each small add close to that point, we leave the solution at rest for some hours); As last, if the solution results in a solution divided into a liquid phase (solution of solid and liquid solvent) and a solid phase (the solid solvent not dissolved), then the saturation is considered as already reached. \\
+
+Then, we have registered the concentration of saturation for every mixture, written as value in a range given by $[c_{Dissolved}, c_{Not Dissolved}]$ corresponding to the limits when the solid solvent is still perfectly dissolved and when the solution has part of the solid solvent as precipitate. The gap between these limits is a consequence of the resolution of the dilution, which is \SI{10}{\mu L}. Figure \ref{fig:solubility} shows the middle values of the ranges, as well as the measurements of $c_{sat}$ calculated as middle value of the range.\\
+
+\newpage
+\begin{table*}[!h]\scriptsize
+	\caption{\small Measurements of saturation levels for different solutions.}
+	\label{tab:solids}
+	~\\
+	\centering
+	\begin{tabular}{cccc}
+		\textbf{Solid Solvent} & \textbf{Liquid Solvent} & \textbf{Range of saturation (g/L)} & $c_{sat}$\\
+		\hline
+		1,3,5-TCB & Dihexyl Ether & $[463.4, 486.2]$ & $474.8$\\
+				& 2-Decanone & $[515.5, 559.9]$ & $537.7$\\
+				& 2-Octanone & $[544.5, 577.2]$ & $560.9$\\
+				& 4-Ethylcyclohexane & $[651.0, 670.6]$ & $660.8$\\
+				& Chloroform & $[1196.2, 1281.6]$ & $1238.9$\\
+				& Chlorobenzene & $[1271.7, 1338.6]$ & $1305.2$\\
+		\midrule
+		1,2,3-TCB &  Dihexyl Ether & $[579.7, 605.4]$ & $592.6$\\
+				& 2-Decanone & $[988.2, 1043.1]$ & $1015.7$\\
+				& 2-Octanone & $[1149.1, 1216.7]$ & $1182.9$\\
+				& 4-Ethylcyclohexane & $[1487.3, 1589.0]$ & $1538.2$\\
+				& Chloroform & $[1337.3, 1499.2]$ & $1418.3$\\
+				& Chlorobenzene & $[1782.1, 1944.1]$ & $1863.1$\\
+		\midrule
+		1,3,5-TBB & Dihexyl Ether & $[86.7, 92.0]$ & $89.4$\\
+				& 2-Decanone & $[106.4, 114.2]$ & $110.3$\\
+				& 2-Octanone & $[82.4, 84.9]$ & $83.7$\\
+				& 4-Ethylcyclohexane & $[162.7, 177.0]$ & $169.9$\\
+				& Chloroform & $[213.1, 223.8]$ & $218.5$\\
+				& Chlorobenzene & $[292.8, 309.7]$ & $301.3$\\
+		\midrule
+		1,2,4,5-TCB & Dihexyl Ether & $[33.5, 34.0]$ & $33.8$\\
+				& 2-Decanone & $[45.9, 46.2]$ & $46.1$\\
+				& 2-Octanone & $[47.5, 48.4]$ & $48.0$\\
+				& 4-Ethylcyclohexane & $[70.2, 75.6]$ & $72.9$\\
+				& Chloroform & $[96.5, 100.3]$ & $98.4$\\
+				& Chlorobenzene & $[118.2, 128.7]$ & $123.5$\\
+		\midrule
+		1,2,3,4-TCB & Dihexyl Ether & $[1010.6, 1070.0]$ & $1040.3$\\
+				& 2-Decanone & $[1726.4, 1812.8]$ & $1769.6$\\
+				& 2-Octanone & $[1763.7, 1921.0]$ & $1842.4$\\
+				& 4-Ethylcyclohexane & $[2471.9, 2677.9]$ & $2574.9$\\
+				& Chloroform & $[2811.0, 3045.3]$ & $2928.2$\\
+				& Chlorobenzene & $[2645.1, 2821.5]$ & $2733.3$\\
+		\midrule
+		HMB & Dihexyl Ether & $[37.4, 38.3]$ & $37.9$\\
+				& 2-Decanone & $[41.0, 41.6]$ & $41.3$\\
+				& 2-Octanone & $[46.1, 52.0]$ & $49.1$\\
+				& 4-Ethylcyclohexane & $[63.8, 65.6]$ & $64.7$\\
+				& Chloroform & $[65.1, 67.4]$ & $66.3$\\
+				& Chlorobenzene & $[126.5, 128.5]$ & $127.5$\\
+		\hline
+	\end{tabular}
+\end{table*}
+
+\begin{figure}[!h]
+	\includegraphics[width=0.9\textwidth, keepaspectratio]{Images_thesis/solubility.png}
+	\label{fig:solubility}
+\end{figure}
+
+		\subsection{DPP-DTT}
+		
+	\section{Blade Coating}\label{sec:coating}
+	
 	\section{Optical characterization}
 	%microscope, sensofar, dektak, afm
+	
 	\section{Electrical characterization}
 	%evaporator, instrument for resistance and conductivity
-	\section{Spectroscopy}
-	%spectrometer
 	
-%-----------------------------------------RESULTS AND DUSCUSSION------------------------------------------------  
+	
+	
+%-----------------------------------------RESULTS AND DISCUSSION------------------------------------------------  
   \newpage
   \chapter{Results and Discussion}\label{cha:results}
-	\section{Polystyrene}
-		\subsection{sdf}
-		\subsection{efv}
-		\subsection{v}
-		%all the experiments....
+  
+  In this chapter, we will show the results coming from the optimization of the blade coating process and the electrical and optical properties of the aligned fibers of DPP-DTT. In order to optimize the coating process by selecting the best parameters of the Doctor Blade and the most suitable solvent combination, we made the Fast Fourier Transform (FFT) of the microscope pictures taken for each sample in bright field at 2X magnification and a Principal Component Analysis (PCA) on the Fourier Transform images. The method and the Alignment Factor calculated in the analysis has been defined in Chapter ref. and represents a meaningful information about the presence and the level of alignment of the fibers. Since more than 700 samples have been produced in the overall experiments and that for each one 8 different parameters can be fix, this method has demonstrated to be a valuable tool to efficiently select the best set of parameters for the production of uni-axially aligned polymers.\\
+  
+	\section{Optimization with Polystyrene}
+	In order to find the best combination of parameters, we have used Polystyrene as functional polymer. As base for the films, we have used glass samples of dimensions \SI{25x50}{\milli\metre}. Before the coating process, the glasses were cleaned by ultrasonic bath in Acetone for 10 min, in Isopropanol for other 10 min and eventually they have been dried by hydrogen flow. Then, right before the coating process, they were treated in $O_2$-plasma oven for 5 min. After the deposition of the film by blade coating, all the samples have been left drying in vacuum overnight.\\
+As shown in Chapter \ref{sec:solubility}, we have selected six different solid solvent as possible crystalline templates and six different liquid solvents. As first, we have used Polystyrene with average $M_W$ \num{35000}. In Chapter \ref{sec:machine}, we show the results for the variation of the coating parameters, i.e. speed, gap size and ink amount, using PS at \SI{100}{\gram\per\liter} in 1,3,5-TCB and Chlorobenzene. We will show the results of the alignment factor by varying the choice of the liquid solvent in Chapter \ref{sec:liquids} and by varying the crystalline template in Chapter \ref{sec:solids}. Afterwards in Chapter \ref{sec:concentration}, having selected the best solvent combination, we will examine the impact on the film morphology by varying the concentration of PS. In Chapter \ref{sec:mw}, we will explore the alignment of a PS with an average molecular weight of \num{280000}.\\
+		
+		\subsection{Variation of the Machine Parameters}\label{sec:machine}
+		
+We have started with testing all the possible parameters of the Doctor Blade by using an ink of PS at \SI[per-mode=symbol]{100}{\gram\per\liter} in \emph{1,3,5-TCB} (MP \SI{64}{\celsius}, BP \SI{209}{\celsius}) and \emph{Chlorobenzene} (BP \SI{132}{\celsius}). The aim of this test is to understand how the morphology of the film changes with the parameters of the machine, i.e. the \emph{speed} of deposition, the \emph{gap size} of the blade and the \emph{amount of ink} injected. The details of the process have been already explained in Chapter \ref{sec:coating}. Table \ref{tab:par1} shows the parameters that we have used for this experiment.  
+\begin{table*}[tb]\scriptsize
+	\caption{\small Parameters used for Doctor Blading by using $PS$ at \SI[per-mode=symbol]{100}{\gram\per\liter} in 1,3,5-TCB and CB as ink.}
+	\label{tab:par1}
+	~\\
+	\centering
+	\begin{tabular}{c|ccc}
+		\textbf{Sample \#} & \textbf{Speed} ($mm/s$) & \textbf{Gap Size} ($\mu m$)& \textbf{Ink Amount} ($\mu L$)\\
+		\hline
+		1 & $0.1$ & $50$ & $50$\\
+		2 & $0.1$ & $50$ & $50$\\
+		3 & $0.5$ & $50$ & $50$\\
+		4 & $0.5$ & $50$ & $50$\\
+		5 & $1$ & $50$ & $50$\\
+		6 & $1$ & $50$ & $50$\\
+		\midrule
+		7 & $0.1$ & $75$ & $50$\\
+		8 & $0.1$ & $75$ & $50$\\
+		9 & $0.1$ & $30$ & $50$\\
+		10 & $0.1$ & $30$ & $50$\\
+		11 & $0.1$ & $15$ & $50$\\
+		12 & $0.1$ & $15$ & $50$\\
+		13 & $0.1$ & $100$ & $50$\\
+		14 & $0.1$ & $100$ & $50$\\
+		\midrule
+		15 & $0.5$ & $15$ & $50$\\
+		16 & $0.5$ & $15$ & $50$\\
+		17 & 	$1$ & $15$ & $50$\\
+		18 & $1$ & $15$ & $50$\\
+		\midrule
+		20 & $0.1$ & $5$ & $50$\\
+		21 & $0.1$ & $5$ & $50$\\
+		\midrule
+		22 & $0.1$ & $50$ & $30$\\
+		23 & $0.1$ & $50$ & $30$\\
+		24 & $0.1$ & $50$ & $15$\\
+		25 & $0.1$ & $50$ & $15$\\
+		\midrule
+		26 & $0.1$ & $30$ & $30$\\
+		27 & $0.1$ & $30$ & $30$\\
+		28 & $0.1$ & $15$ & $30$\\
+		29 & $0.1$ & $15$ & $30$\\
+		\midrule
+		30 & $0.1$ & $30$ & $70$\\
+		31 & $0.1$ & $30$ & $70$\\
+		32 & $0.1$ & $15$ & $70$\\
+		33 & $0.1$ & $15$ & $70$\\
+		\hline
+	\end{tabular}
+\end{table*}
+
+As shown in Figure , we can observe from the photographs the formation of fiber-like crystals and how the morphology changes with the parameters of the machine. Indeed, since the \emph{Chlorobenzene} evaporates much faster than the \emph{1,3,5-TCB}, the crystallization process of the \emph{1,3,5-TCB} is favoured and it can work as a template for the PS leading to the formation of the fibers. We have noticed that, by increasing the \textbf{speed}, the crystals tend to grow more from the edges towards the centre of the sample, leading to less aligned-fibers. Moreover, crystals with a "tree" shape becomes more and more present and bigger.\\
+
+By increasing the \textbf{gap size}, the fibers start later to be aligned along the coating direction, leading to bigger and bigger "triangles" starting from the very beginning of the sample.  Crystal trees are present and become less and less oriented with the increase of thickness.\\
+
+By increasing the \textbf{amount of ink}, the fibers become thinner and thinner in section and the number of "empty" spaces in between decreases (density of fibers increases).\\
+
+The best sample has been obtained by using the following parameters: \textbf{speed} \SI[per-mode=symbol]{0.1}{\milli\meter\per\second}, \textbf{gap size} \SI{15}{\mu \meter}, \textbf{ink amount} \SI{50}{\mu \liter}.\\
+
+
+	\subsection{Morphology for different liquid solvents}\label{sec:liquids}
+
+We have tested the PS at \SI[per-mode=symbol]{100}{\gram\per\liter} in \emph{1,3,5-TCB} with the other liquid solvents, which are \emph{Chloroform}, \emph{Dihexyl Ether}, \emph{2-Octanone}, \emph{2-Decanone} and \emph{4-Ethylcyclohexanone}. All the solutions have appeared transparent except for the case of \emph{1,3,5-TCB} and \emph{Dihexyl Ether} whose aspect was opaque and white, resulting to be rather a dispersion than a real solution. As base for the films we have cut glass samples of dimensions \SI{25x50}{\milli\metre}. First, they were cleaned by ultrasonic bath in Acetone for 10 min, Isopropanol for 10 min and dried by hydrogen flow. Then, they were treated in $O_2$-plasma oven for 5 min and then used for Doctor Blade coating. Afterwards, all the samples have been left in vacuum overnight. The Doctor Blade parameters that we have used are reported in Table \ref{tab:par2}.\\
+
+We have observed that in the case of \emph{Chloroform}, the parameters regime is different from the case of \emph{Chlorobenzene} in Experiment 2. In fact, neither a speed of \SI{0.1}{\milli\metre/\second} or a speed of \SI{0.5}{\milli\metre/\second} were enough to cover the whole area of the samples in the case of \emph{Chloroform} (samples 1,2 and 5,6 in Table \ref{tab:par2}). This is a result of the lower boiling point of the \emph{Chloroform} (\SI{62}{\celsius}) evaporating much faster than \emph{Chlorobenzene} (BP \SI{132}{\celsius}), making the crystallisation process much faster, until the solvent totally evaporates before the end of the coating process. The BP of the \emph{Chloroform} is comparable with the MP of \emph{1,3,5-TCB} (\SI{63}{\celsius}). Then, we had to use higher speeds of the Doctor Blade in order to compensate the high speed of the evaporation, and a good choice has resulted to be \SI{2}{\milli\metre/\second} which is good because first, the process become faster and more efficient in terms of time of production and second, in this way we are far from the lowest limit of speed of the machine, which is \SI{0.1}{\milli\metre/\second}. In fact, some references had to deal with this limit that was not slow enough for their experiment, then they had to solve the problem by using a Nitrogen flow for improving the alignment of the fibers.\\
+In the case of \emph{2-Octanone}, the samples do not show any presence of fibers at all. Likely, the boiling point of the liquid solvent is too high (\SI{174}{\celsius}) for allowing the crystallisation of the \emph{1,3,5-TCB}, being the evaporation of the liquid solvent so slow that the solid solvent had the time to (BP \SI{209}{\celsius}) evaporate with it, even if we have slow down the process by using the lowest speed available.\\
+With the \emph{Dihexyl Ether} (BP \SI{229}{\celsius}), the films appear not homogeneous and fibers are not present. Also in this case, the boiling point is too high and we have no fibers bacause the aforesaid reasons.\\
+In the case of \emph{4-Ethylcyclohexanone} (BP \SI{194}{\celsius}), the ink did not wet the surface properly and empty holes are presents on the films. No fibers also in this case.\\
+The best sample has been obtained for the case of \emph{1,3,5-TCB} and \emph{Chloroform} by using the following parameters: \textbf{speed} \SI[per-mode=symbol]{2}{\milli\meter\per\second}, \textbf{gap size} \SI{30}{\mu \meter}, \textbf{ink amount} \SI{50}{\mu \liter}.
+
+\begin{table*}[!h]\scriptsize
+	\caption{\small Parameters used for Doctor Blading by using $PS$ at \SI[per-mode=symbol]{100}{\gram\per\liter} in 1,3,5-TCB in different liquid solvents as inks.}
+	\label{tab:par2}
+	~\\
+	\centering
+	\begin{tabular}{c|c|ccc}
+		\textbf{liquid solvent} & \textbf{Sample \#} & \textbf{Speed} ($mm/s$) & \textbf{Gap Size} ($\mu m$)& \textbf{Ink Amount} ($\mu L$)\\
+		\hline
+		Chloroform & 1 & $0.1$ & $30$ & $50$\\
+		& 2 & $0.1$ & $30$ & $50$\\
+		& 3 & $1$ & $30$ & $50$\\
+		& 4 & $1$ & $30$ & $50$\\
+		& 5 & $0.5$ & $30$ & $50$\\
+		& 6 & $0.5$ & $30$ & $50$\\
+		\cmidrule{2-5}
+		& 7 & $2$ & $30$ & $50$\\
+		& 8 & $2$ & $30$ & $50$\\
+		& 9 & $2$ & $15$ & $50$\\
+		& 10 & $2$ & $15$ & $50$\\
+		\cmidrule{2-5}
+		& 11 & $2$ & $15$ & $75$\\
+		& 12 & $2$ & $15$ & $75$\\
+		\cmidrule{2-5}
+		& 13 & $2$ & $5$ & $75$\\
+		& 14 & $2$ & $5$ & $75$\\
+		& 15 & $2$ & $10$ & $75$\\
+		& 16 & $2$ & $10$ & $75$\\
+		\cmidrule{2-5}
+		& 17 & $2$ & $30$ & $100$\\
+		& 18 & $2$ & $30$ & $100$\\
+		\cmidrule{2-5}
+		& 19 & $2$ & $10$ & $75$\\
+		\midrule
+		\midrule
+		2-Octanone & 20 & $0.1$ & $30$ & $50$\\
+		& 21 & $0.1$ & $10$ & $50$\\
+		& 22 & $0.1$ & $10$ & $20$\\
+		& 23 & $0.1$ & $10$ & $10$\\
+		& 24 & $0.1$ & $5$ & $10$\\
+		& 25 & $0.1$ & $30$ & $75$\\
+		\midrule
+		\midrule
+		2-Decanone & 26 & $0.1$ & $30$ & $50$\\
+		& 27 & $0.1$ & $10$ & $50$\\
+		& 28 & $0.1$ & $10$ & $20$\\
+		& 29 & $0.1$ & $10$ & $10$\\
+		& 30 & $0.1$ & $5$ & $10$\\
+		& 31 & $0.1$ & $30$ & $75$\\
+		\midrule
+		\midrule
+		Dihexyl Ether & 32 & $0.1$ & $30$ & $50$\\
+		& 33 & $0.1$ & $30$ & $50$\\
+		& 34 & $1$ & $15$ & $50$\\
+		& 35 & $1$ & $15$ & $50$\\
+		& 36 & $0.1$ & $15$ & $50$\\
+		& 37 & $0.1$ & $15$ & $50$\\
+		& 38 & $0.1$ & $50$ & $50$\\
+		& 39 & $0.1$ & $50$ & $50$\\
+		& 40 & $0.1$ & $30$ & $30$\\
+		& 41 & $0.1$ & $30$ & $30$\\
+		\midrule
+		\midrule
+		4-Ethylcyclohexanone & 42 & $0.1$ & $30$ & $50$\\
+		& 43 & $0.1$ & $30$ & $50$\\
+		& 44 & $0.1$ & $15$ & $50$\\
+		& 45 & $0.1$ & $15$ & $30$\\
+		& 46 & $1$ & $30$ & $30$\\
+		& 47 & $0.1$ & $30$ & $30$\\
+		\hline
+	\end{tabular}
+\end{table*}
+
+
+		\subsection{Fibers from Different Crystalline Templates}\label{sec:solids}
+		
+We have tested other kind of solid solvents for the PS at \SI[per-mode=symbol]{100}{\gram\per\liter}, which are \emph{1,3,5-TBB}, \emph{1,2,3-TCB}, \emph{1,2,3,4-TCB}, \emph{1,2,3,5-TCB} and \emph{Hexamethylbenzene}, in \emph{Chlorobenzene}.  All the solutions have looked like transparent except for the case of \emph{1,3,5-TBB} which has resulted in orange. As base for the films we have cut glass samples of dimensions \SI{25x50}{\milli\metre}. First, they were cleaned by ultrasonic bath in Acetone for 10 min, Isopropanol for 10 min and dried by hydrogen flow. Then, they were treated in $O_2$-plasma oven for 5 min and then used for Doctor Blade coating. Afterwards, all the samples have been left in vacuum overnight. The Doctor Blade parameters are shown in Table \ref{tab:par3}.\\
+
+\begin{table*}[!h]\scriptsize
+	\caption{\small Parameters used for Doctor Blading by using $PS$ at \SI[per-mode=symbol]{100}{\gram\per\liter} in different solid solvents and \emph{Chlorobenzene} as inks.}
+	\label{tab:par3}
+	~\\
+	\centering
+	\begin{tabular}{c|c|ccc}
+		\textbf{solid solvent} & \textbf{Sample \#} & \textbf{Speed} ($mm/s$) & \textbf{Gap Size} ($\mu m$)& \textbf{Ink Amount} ($\mu L$)\\
+		\hline
+		1,3,5-Tribromobenzene & 48 & $0.1$ & $30$ & $50$\\
+		& 49 & $0.1$ & $30$ & $50$\\
+		& 50 & $0.1$ & $15$ & $50$\\
+		& 51 & $0.1$ & $15$ & $50$\\
+		& 52 & $0.1$ & $5$ & $50$\\
+		& 53 & $0.1$ & $9$ & $50$\\
+		& 54 & $0.1$ & $5$ & $50$\\
+		& 55 & $0.1$ & $50$ & $50$\\
+		& 56 & $0.1$ & $50$ & $50$\\
+		\cmidrule{2-5}
+		& 57 & $0.1$ & $15$ & $15$\\
+		& 58 & $0.1$ & $5$ & $15$\\
+		& 59 & $0.1$ & $5$ & $15$\\
+		\cmidrule{2-5}
+		& 60 & $0.1$ & $5$ & $75$\\
+		& 61 & $0.1$ & $5$ & $75$\\
+		& 62 & $0.1$ & $5$ & $100$\\
+		& 63 & $0.1$ & $5$ & $100$\\
+		\midrule
+		\midrule
+		1,2,4,5-Tetrachlorobenzene & 64 & $0.1$ & $30$ & $50$\\
+		& 65 & $0.1$ & $30$ & $50$\\
+		& 66 & $0.1$ & $5$ & $75$\\
+		& 67 & $0.1$ & $5$ & $75$\\
+		& 68 & $0.1$ & $5$ & $30$\\
+		& 69 & $0.1$ & $5$ & $30$\\
+		& 70 & $0.1$ & $5$ & $15$\\
+		& 71 & $0.1$ & $30$ & $75$\\
+		& 72 & $0.1$ & $30$ & $30$\\
+		& 73 & $0.1$ & $30$ & $100$\\
+		\midrule
+		\midrule
+		1,2,3-Trichlorobenzene & 74 & $0.1$ & $30$ & $50$\\
+		& 75 & $0.1$ & $30$ & $50$\\
+		& 76 & $0.1$ & $15$ & $50$\\
+		& 77 & $0.1$ & $15$ & $50$\\
+		& 78 & $0.1$ & $15$ & $75$\\
+		& 79 & $0.1$ & $15$ & $75$\\
+		& 80 & $1$ & $15$ & $75$\\
+		& 81 & $0.1$ & $15$ & $75$\\
+		& 82 & $0.1$ & $15$ & $75$\\
+		\midrule
+		\midrule
+		Hexamtehylbenzene & 84 & $0.1$ & $30$ & $10$\\
+		& 85 & $0.1$ & $30$ & $50$\\
+		& 86 & $0.1$ & $15$ & $50$\\
+		& 87 & $0.1$ & $15$ & $50$\\
+		& 88 & $0.1$ & $15$ & $75$\\
+		& 89 & $0.1$ & $15$ & $75$\\
+		\midrule
+		\midrule
+		1,2,3,4-Tetrachlorobenzene & 90 & $0.1$ & $30$ & $50$\\
+		& 91 & $0.1$ & $30$ & $50$\\
+		& 92 & $0.1$ & $15$ & $50$\\
+		& 93 & $0.1$ & $15$ & $50$\\
+		& 94 & $0.1$ & $15$ & $75$\\
+		& 95 & $0.1$ & $15$ & $75$\\
+		& 96 & $0.1$ & $50$ & $50$\\
+		& 97 & $0.1$ & $50$ & $50$\\
+		\hline
+	\end{tabular}
+\end{table*}
+
+We have observed that the \emph{1,2,4,5-TCB} (BP \SI{243}{\celsius}, MP \SI{139}{\celsius}) in \emph{Chlorobenzene} (BP \SI{132}{\celsius}) has produced very peculiar films, characterised by fibers organized like several crystal trees that can be more or less oriented along the coating direction, depending on the parameters. What we have seen is that by increasing the ink amount, the fibers are more and more oriented along the coating direction. Instead, if the gap size increases, then there are not significant changes on the morphology of the film. We can see that in this case the BP of \emph{Chlorobenzene} is lower than the MP of the solid solvent, which was not the case of \emph{1,3,5-TCB} (MP \SI{63}{\celsius}).\\
+In the case of \emph{1,3,5-TBB} (BP \SI{271}{\celsius}, MP \SI{119}{\celsius}), we have obtained big fibers with huge spaces in between them hosting crystal families growing from the big fibers in the transverse direction with respect to the coating one. We have observed that when the gap size increase then the transversal area become smaller and smaller and the orientation gets better. If the ink amount increases, fibers are more oriented along the coating direction and also create much smaller transversal areas. Also in this case, the BP of \emph{Chlorobenzene} is very close to the MP of the solid solvent, but this time is higher.\\
+The \emph{Hexamethylbenzene} has not shown any fibers. Instead, the films contain several rods of crystals scattered randomly on the whole surface of the sample. By increasing the amount of ink, the rods become bigger.\\
+In the case of \emph{1,2,3-TCB} (BP \SI{219}{\celsius}, MP \SI{53}{\celsius}), we have seen the formation of  very big fibers, charactherised by two different growing directions: one along the coating direction, and the second one transversal in between the big fibers. We have noticed that by increasing the gap size, the orientation improves only slightly. Better results in terms of orientation along the coating direction are obtained by increasing the ink amount but, with this, the transversal growth of the crystals becomes more important as well. A very bad orientation is the result of increasing the speed, which is needed to be set at \SI[per-mode=symbol]{0.1}{\milli\meter\per\second}. We got an increased randomness of the fibers for a speed set at \SI[per-mode=symbol]{1}{\milli\meter\per\second}, huge fibers and chaos in between.
+Also in the case of \emph{1,2,3,4-TCB} we have big fibers. They appear highly aligned and dense. Increasing the gap size seems to improve the overall orientation of the fibers, while improving the ink amount make them more dense but the overall orientation gets worst.\\
+The best samples has been obtained by using the following parameters: 
+	\begin{itemize}		
+		\item  For the case of \emph{1,2,4,5-TCB}, \textbf{speed} \SI[per-mode=symbol]{0.1}{\milli\meter\per\second}, \textbf{gap size} \SI{5}{\mu \meter}, \textbf{ink amount} \SI{75}{\mu \liter}.
+		\item  For the case of \emph{1,3,5-TBB}, \textbf{speed} \SI[per-mode=symbol]{0.1}{\milli\meter\per\second}, \textbf{gap size} \SI{5}{\mu \meter}, \textbf{ink amount} \SI{75}{\mu \liter}.
+		\item  For the case of \emph{1,2,3-TCB}, \textbf{speed} \SI[per-mode=symbol]{0.1}{\milli\meter\per\second}, \textbf{gap size} \SI{15}{\mu \meter}, \textbf{ink amount} \SI{75}{\mu \liter}.
+		\item  For the case of \emph{1,2,3,4-TCB}, \textbf{speed} \SI[per-mode=symbol]{0.1}{\milli\meter\per\second}, \textbf{gap size} \SI{30}{\mu \meter}, \textbf{ink amount} \SI{50}{\mu \liter}.
+	\end{itemize}		
+		
+		
+		\subsection{Different concentrations of Polysterene}\label{sec:concentration}
+		
+		\subsection{Higher Average Molecular Weight}\label{sec:mw}
+		
 		\subsection{Other Published Data}
 		\subsection{Discussion}
+	
+	
+	
+	
+	
 	
 	\section{DPP-DTT}
 		\subsection{Morphology of the films}
@@ -307,7 +667,7 @@ For crystalline undoped silicon at room temperature, the carrier density is of t
    % \nocite{*}
     %\citestyle{egu}
     \bibliographystyle{plain}
-    \bibliography{references}
+    %\bibliography{references}
     
     \include{deposition}
     
