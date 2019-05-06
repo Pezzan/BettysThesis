@@ -1,0 +1,316 @@
+%% Template for Master thesis
+%% ===========================
+%%
+%% You need at least KomaScript v3.0.0,
+%% e.g. available in Texlive 2009
+\documentclass  [
+  paper    = a4,
+  BCOR     = 10mm,
+  twoside,
+  fontsize = 12pt,
+  fleqn,
+  toc      = bibnumbered,
+  toc      = listofnumbered,
+  numbers  = noendperiod,
+  headings = normal,
+  listof   = leveldown,
+  version  = 3.03
+]                                       {scrreprt}
+
+% used pagages
+\usepackage     [utf8]                  {inputenc}
+\usepackage     [T1]                    {fontenc}
+\usepackage                             {color}
+\usepackage                             {amsmath}
+\usepackage                             {graphicx}
+\usepackage                          {subfig}
+\usepackage			{wrapfig}
+\usepackage     [english]               {babel}
+\usepackage                             {natbib}
+\usepackage                             {hyperref}
+\usepackage{siunitx}
+\usepackage{chemmacros}
+\usepackage{elements}
+\usepackage[explicit]{titlesec}
+
+
+% links
+\definecolor{darkblue}{rgb}{0.0,0.0,0.4}
+\definecolor{darkgreen}{rgb}{0.0,0.4,0.0}
+\hypersetup{
+    colorlinks,
+    linkcolor=black,
+    citecolor=darkgreen,
+    urlcolor=darkblue
+}
+
+\titlespacing*{\section}{0pt}{4em}{3em}%{command}{left}{before}{after}
+
+\begin{document}
+%% title pages similar to providet template instead of maketitle
+ \include{titlepages-ger} % select either german
+  \include{titlepages-eng} % or english title page
+  \include{abstracts}
+  \include{acknowledgments}	
+
+  \tableofcontents%%%%%%%%%%%%%%%%%%%%
+
+%-----------------------------------------INTRODUCTION------------------------------------------------  
+  \chapter{Introduction}\label{cha:intro}
+
+
+Organic electronics represent the meeting point of several research fields such as physics, chemistry, material science and engineering, whose aim is to exploit promising materials for the production of new electrical devices so as to be highly efficient, cheap with respect to inorganic materials-based devices and easily reproducible on large scale. The field of organic electronics focuses on the development of new devices based on organic materials showing good electrical and optical properties. The most interesting organic materials for electronics consist in conjugated polymers, which are active components in many devices since they interact with light and transport charge carriers and behave like semiconductors. The strength of organic semiconductors lies on the possibility to combine the electrical properties of semiconducting materials with the versatile chemical and mechanical properties of plastics, i.e. conduction of electrical current, the absorption and the emission of light in the visible spectrum, with the possibility to be developed by chemical synthesis that can be easily controlled for getting the desired emission wavelength, lifetime and physical properties. Such organic materials represent a fundamental and inexhaustible source of new studies in all the applied sciences, being versatile for several kind of applications and needs. Differently from inorganic semiconductors such as Silicon and Germanium, the organic semiconductors consist in molecules mostly made by carbon and hydrogen atoms and can vary greatly in size. Moreover, since there are a large number of ways in which the carbon atoms can bond with other atoms, more than nine million of organic compounds are possible which represent more than the \SI{99}{\percent} of all the compounds currently known\cite{art:compounds}. From small to very long and complex conjugated polymers, their electrical and optical properties are based on a different intrinsic electronic structure leading to a different macroscopic physical behaviour. Thin films of conjugated polymers showing very promising semiconductor-like characteristics have been largely studied among the scientific community worldwide. It has been demonstrated that the optoelectronic properties at macroscopic level are deeply related to an intrinsic anisotropy of the molecular structure of the polymer, which have a significant impact on the performance of devices such as organic field-effect transistors (OFETs), organic light-emitting diodes (OLEDs) and photodetectors. Thanks to their versatile features and chemical processability, organic semiconductors can be used for the production of several technologies, depending on their design. Typically, a silicon-based transistor needs a lot of different manufacturing processes, such as material deposition, several patterning and masks steps including several high-vacuum and high-temperature treatments, being expensive in terms of money per unit area produced, time consumption and energy. By contrast, thanks to the high solubility of their side chains, semiconducting polymers can be used in the form of inks in order to fabricate electronics by using solution-based printing processes, allowing to efficiently produce large-area and low-temperature-fabricated OFETs. This also leads to a significant reduction of the costs and the possibility to build new devices equipped with flexible electronics, made possible thanks to the use of plastic substrates processed at low temperatures\cite{book:koehler}. 
+\begin{figure}[t]
+	\centering%
+	\subfloat[]%
+	{\includegraphics[width=8cm, keepaspectratio]{Images_thesis/lgOLED}\label{fig:lg}}\\
+	\subfloat[]%
+	{\includegraphics[width=5cm, height=4cm]{Images_thesis/biolec}\label{fig:biolec}}\qquad
+	\subfloat[]%
+	{\includegraphics[width=5cm, height=4cm]{Images_thesis/PLED}\label{fig:pled}}\\
+	\caption{\footnotesize (a) Prototype of a rollable OLED TV by LG \cite{web:LGrollable} (b) Photograph of a light-emitting cell (LEC) made of bio-compatible materials developed by J. Zimmermann et al.\cite{art:biolec}, (c) Ultraflexible green polymer-emissive-material-based OLED (PLED) by H. Ling et al.\cite{art:pled}}
+	\label{fig:applications}
+\end{figure}
+The first OFET was proposed by J.E. Lilienfeld\cite{pat:lilienfeld} in 1930 and produced for the first time by Koezuka et al.\cite{art:koezuka} in 1987, whose semiconducting layer was made of \emph{Polythiophene}, a polymer characterized by a very high conductivity. The OLEDs were produced for the first time by Ching W. Tang in 1987\cite{art:ching} and consist in a sandwich-like structure containing a conductive layer and a film made of organic material emitting light when a potential difference is applied at the electrodes. Nowadays, OLEDs are at the base of the production of several commonly used devices such as digital displays. Furthermore, they have opened the doors to a world of new technology and research in constant development, giving birth to a new generation of devices that can also be built on the principle of bio-compatibility (Figure \ref{fig:biolec}). The expectation to realise new applications has lead to an incredibly important progress in this field for the production of solar cells, small and large-area flexible light sources (Figure \ref{fig:pled}) and new-generation displays (Figure \ref{fig:lg}), photocopiers, low-cost printed electronics and much more complex devices.\\
+
+This thesis focuses on the implementation and  the optimization of a one-step method to produce thin films of uniaxially-oriented fibers. The development of techniques allowing a control on the morphology of the film during deposition represent a valuable tool to influence the structure of the film at molecular scale by acting at macroscopic level, which is the fundamental step to both optimize the device performances and seek for new possible applications. It has been shown in literature that a preferential orientation of the crystallites of conjugated polymers and an increased crystallinity can enhance the charge transport and the optical properties of the semiconductor. Indeed, the orientation of emitter materials can significantly influences the emission efficiency of OLEDs\cite{art:orient}, while in photodetectors the detection of polarized light has been possible thanks to the orientation of carbon nano-tubes\cite{art:Orient}. Moreover, R\"odlmeier et al.\cite{art:Tobi} have shown that the molecular orientation of P3HT significantly increases the field-effect mobility along the fibers direction with respect to isotropic printed films. The existence of important correlations between the uniaxial orientation of conjugated polymer and its electronic properties, such as current density and carrier mobility, reveals a promising feature for a wide range of applications.\\
+
+Several solution-based processes exist with the aim of producing highly oriented thin films. For example, post-processing methods include mechanical stretching, rubbing and nano-patterning by imprinting, while other processes are based on directional drying, such as dip-coating, wetting and dewetting structures, epitaxial growth on crystal template and also large-area compatible techniques such as dye coating, zone casting, wire-bar coating, solution shearing, blade coating\cite{art:review}\cite{art:caironi} and inkjet printing\cite{art:Tobi}. In this work, we explore further the directional drying process by developing a one-step method for depositing uni-axially oriented polymers directly from solution by blade coating. We will use a crystalline template represented by a solid organic material with a melting point higher than the deposition temperature, dissolved within the main solution of the solid functional polymer. The aim of the crystal template is to drive the crystallization of the functional polymer during the deposition process. As the carrier solvent evaporates during the coating process, the crystalline template starts to solidify, following the coating direction and serving as guide for the crystallization of the functional material. This method has already been demonstrated to produce highly ordered structures with an increased crystallinity\cite{art:bladecoating}. In this work, several solvent compositions together with a wide range of blade parameters will be explored. In some cases, the kinetics of the process allowed us to produce highly oriented films at the scale of \SI{10}{\square\centi\metre}, presenting this method as a promising technique for future large area applications.\\
+
+As functional material, we have selected a conjugated polymer named DPP-DTT belonging to the class of Donor-Acceptor (D-A) polymers. Such polymers, having an alternating donor-acceptor unit, have become recently of great interest, especially for OFETs and solar cells. In particular, the work done by side-chain engineering has led to an effective and successful acceptor unit based on diketopyrrolopyrrole (DPP), which has been the starting point for several kind of polymer structures and studies\cite{art:DA}. A meaningful property that these polymers have shown is ambipolarity, i.e. the ability to simultaneously transport electrons and holes, demonstrating to have a huge potential for several applications in organic electronics. Indeed, they have incredibly improved the performance of both transistors and solar cells, becoming really competitive with inorganic semiconductors and opening the view to new scenarios of technology. The choice of DPP-DTT as organic semiconductor has been motivated by its promising properties widely demonstrated in literature. It has been shown that ambipolar OFETs based on a single solution-processed DPP-DTT have high, balanced electrons and holes mobilities exceeding \SI{1}{\square\centi\metre\per\volt\per\second} for both electrons and holes\cite{art:dppmob}\cite{art:dppmob2017}. Furthermore, S. Schott et al.\cite{art:DPPBTz} have shown that OFETs based on DPP-BTz, a D-A polymer with similar properties as DPP-DTT\cite{art:dppmob2017}, coated by shearing process, have achieved mobilities of \SI{6.7}{\square\centi\metre\per\volt\per\second} along the chain direction of the polymer, which is much higher than the ones obtained by spin-coating\cite{art:dppmobSC}.\\
+
+In this thesis we have explored for the first time the electrical and optical properties of thin films of uniaxially-aligned DPP-DTT coated by blade coating. Since this technique involves several parameters, including the parameters of the machine and different solvents, we have started with a study on the morphology of the films and the optimization of the process by using Polystyrene (PS) as functional material, since it is a polymer commercially widely available and it is quite cheap, so as to test a wide range of parameters and having a deeper knowledge of the kinetics of the process, which is the best solvent combination and to find the best parameters of the machine that can produce the best alignment of the polymer.\\
+
+In order to give a general notion of the physics contained in this work, we will talk about the main properties of organic semiconductors and the different methods for alignment in Chapter \ref{cha:theory}. In Chapter \ref{cha:experimental} we will explain the experimental method with details on blade coating technique, the solvents and the functional materials used. As following, in Chapter \ref{cha:results}, we will show the results of the study on the morphology of the films and the optimization of the blade coating with PS. Then, we will show the results of the alignment of DPP-DTT, its electrical properties measured in a gap-type geometry and the optical characterization done by spectroscopy. As last, in Chapter \ref{cha:conclusions}, we will discuss about conclusions and outlook.
+
+%finish to say why D-A polymers,i.e. in comparison to p3ht, and why DPP-based polymers.
+
+%---------------------------THEORY--------------------------------------------
+\chapter{Theory}\label{cha:theory}
+
+
+Organic semiconductors consist in polymers belonging to the class of plastics and can be found as both natural and synthetic materials. This class of organic materials posses electrical conduction or isolation depending on their material state. They have a huge potential for optoelectronic applications since a wide spectrum of organic materials exist, providing a huge source of likely good candidates for the needs of organic electronics. This incredible diversity in the characteristics of these materials imply a strong effort in terms of material design, characterization and fabrication. In the world of electronic devices such as diodes, transistors, OLEDs, OFETs and solar cells, the main processes that the charge carriers go through are injection, transport, recombination and generation and ejection. Then, such devices require semiconductors having an electronic structure that permits: first, a selective carrier injection for the commonly-used contact materials such as silver, alluminium and gold; second, a carrier transport across a layer thickness technologically realizable; third, for optoelectronics devices, an optical activity, i.e. property to absorb and emit light in the needed spectral range. Then, organic materials in organic electronics are required to have a band gap in the range of the light spectrum wanted, the visible for OLEDs, and they must be suitable for the carrier injection from the commonly used contact materials, i.e. the work functions of typical contact materials has to match the HOMO and LUMO energy levels of the organic material.\\
+ 
+The excited states and the physical properties of the material can vary depending on the order and the coupling in the solid, although the semiconducting properties of such conjugated polymers have all similar origin. One can mainly distinguish between three varieties of organic semiconductors, i.e. \emph{molecular crystals}, \emph{amorphous molecular films} and \emph{conjugated polymer films}. Molecular crystals are usually made of neutral, flat, large aromatic molecules making the basis of the lattice. The main force involved is the attractive force between non polar molecules acted by weak Van-der-Waals interactions. Although these molecules do not have a static dipole moment, they still possesses a flexible charge distribution leading to temporary fluctuations of charges that produce a dipole moment which is then transferred to the other molecules of the lattice. Molecular crystals are then characterized by anisotropy and high charge carrier mobility, being good for transistor applications. By contrast, amorphous molecular films consist in non-crystalline solid layers of the scale of few nanometers to micrometers thickness made of no-planar small organic molecules belonging to the class of glasses deposited by thermal evaporation. These kind of molecules tend to form non-crystalline solids since no long range order can be obtained by a random intermolecular interactions and steric hindrance influencing the torsional bond angles of the molecule during deposition. They usually have good optical properties like little scattering and high electroluminescence efficiency, being suitable for OLEDs. As last, conjugated polymer films are composed by organic polymers typically not thermally evaporable. Nowadays, the majority of such semiconducting polymers, mainly formed by a chain of carbon atoms with alternating single and double bonds, contains side chains. The side chains have a double aim, which is rendering the polymers soluble in common organic solvents and having control on the distance between the different chains in a deposited film and on their relative orientation. Then, the side chains determine the efficiency of luminescence in OLEDs and the generation of charge carriers in OFETs. Usually, conjugated polymer films are prepared by solution processing such as spin-coating, dip-coating or printing. Such polymers can both form amorphous layers and crystalline regions with preferred orientation. In the last case they behave like semi-crystalline polymers.\\
+
+In this chapter, we will introduce the most meaningful properties of organic semiconductors, such as their typical electronic structure (chapter \ref{sec:electronic}) and their electrical and optical properties (chapter \ref{sec:properties}). In chapter ....\\
+
+%////////////////////////////////////////////ELECTRONIC STATES IN OS//////////////////////////////////////////////////////////////////////// 	
+	\section{Electronic Structure and states of Organic Semiconductors}\label{sec:electronic}
+
+
+In order to understand the properties of organic semiconductors it is necessary to know their electronic structure, which deeply differs from the one of inorganic semiconductors. Indeed, organic semiconductors consists in carbon-based molecules and in order to describe the behaviour of the electrons in the molecule, we need to introduce the concept of molecular orbitals (MOs), commonly used as mathematical functions for describing the chemical and the physical properties of organic molecules. MOs are qualitatively described by a linear combination of atomic orbitals (LCAO), which consists in the quantum superposition of atomic orbitals, where the different electron configurations are described by wave functions, as expressed by equation $\Psi_{molecule} = \sum_{n} c_n \Phi_{atom}$, where $\Psi$ is related to one-electron orbitals for analytical convenience. When atomic orbitals interact, the resulting molecular orbital can be defined by three different states: bonding, in the case of constructive interaction between atomic orbitals; anti-bonding, if there is destructive interaction; non-bonding, in the case of no interaction between atomic orbitals. The bonding and the anti-bonding states for two atoms are indicated as $\Psi=c_1\Phi_1+c_2\Phi_2$ and $\Psi^*=c_1\Phi_1-c_2\Phi_2$ respectively. The energy of bonding MOs is lower than the one of the atomic orbitals, while is higher in the case of anti-bonding MOs.\\
+
+At its ground state, a carbon atom owns six electrons distributed over different orbitals in the configuration $1s^22s^22p_x^12p_y^1$ and it is able to make two covalent bonds. When carbon is not in its elementary form, one of the $2s$ electrons move into the empty $2p_z$ orbital, allowing the atom to potentially make four covalent bonds. The binding energy obtained by such covalent bonds is greater than the energy necessary to promote an electron in $2s$ to $2p_z$. The energy difference between the $2s$ and the $2p$ orbitals is compensated by the external forces that are present whenever a binding partner atom approaches. This lead to the formation of new hybrid orbitals, which are the result of a linear combination of the $2s$ with the $2p$ orbitals. These new $sp^2$ orbitals can then form strong $\sigma$ bonds forming the backbone of the molecule (Figure \ref{fig:hybrid}). The bonds between the remaining $p_z$ orbitals of the $sp^2$-hybrized C-atoms in the molecule form the $\pi$ bonds.  When the molecule has alternating single and double bonds, then it is a \emph{conjugated system} and the $\pi$-electrons are de-localized over the whole molecule (Figure \ref{fig:benzene}), which lower the overall energy of the molecule. The semiconducting behaviour of organic materials lies on the delocalized electrons resulting from the conjugation of $\pi-\pi$ bonds between the carbon atoms in the molecule, providing charge carriers for the conduction. 
+\begin{figure}[t]
+	\centering%
+	\subfloat[]%
+	{\includegraphics[width=9cm, keepaspectratio]{Images_thesis/hybridization}\label{fig:hybrid}}\qquad
+	\subfloat[]%
+	{\includegraphics[width=4cm, keepaspectratio]{Images_thesis/benzene}\label{fig:benzene}}\\
+	\caption{\footnotesize (a) Schematics of $sp^2$ hybridization in the case of graphene\cite{web:cavendish} (b) Various representations of benzene, example of a conjugated system, showing the sigma bonds between $sp^2$ hybridized orbitals, the $p_z$ orbitals and the delocalized $\pi$ molecular orbitals.}
+	\label{fig:electronic1}
+\end{figure}
+\begin{figure}[t]
+	\centering%
+	\subfloat[]%
+	{\includegraphics[width=7cm, keepaspectratio]{Images_thesis/spin_states}\label{fig:spin}}\qquad
+	\subfloat[]%
+	{\includegraphics[width=7cm, keepaspectratio]{Images_thesis/optical_transition}\label{fig:excitation}}\\
+	\caption{\footnotesize (a) The singlet states $S_0$, $S_1$ and the triplet state $T_1$ in an orbital diagram showing the electrons for each orbital and their spin configuration. The different positions of the $\pi^*$ and $\pi$ energy levels are the result of taking into account the Coulomb interactions between electrons\cite{book:koehler} (b) Graph showing the energy levels and the optical gap of a $\pi$-conjugated molecule\cite{book:brutting}.}
+	\label{fig:electronic2}
+\end{figure}
+The wavefunction $\Psi$ has to satisfy the Schr\"odinger equation where the Hamiltonian need to consider the sum of kinetic energy of the electron and the potential energy given by: the repulsion between the different nuclei in in the molecule; the interaction between the electron and the nuclei; interaction between electrons such as Coulomb repulsion and spin. Furthermore, it is necessary to consider the vibrational motion of the nuclei in the molecule, that can be considered as quantum harmonic oscillators. This is commonly done by the \emph{Born-Oppenheimer approximation} that calculate the total wavefunction of the molecular state as $\Psi_{total}=\Psi_{el}\Psi_{spin}\Psi_{vibr}$, where $\Psi_{molecule}$ is the wavefunction of the many-electron electronic wavefuntion given by $\sum_{i}\Psi_{molecule,i}$, $\Psi_{spin}$ is the total spin wavefunction and $\Psi_{vibr}$ is the vibrational wavefunction. This approximation leads to the description of the related phenomenon indicated by the so-called \emph{Frank-Condon principle}, explained more in detail in Chapter \ref{cha:properties}. Such principle explains the change of the vibrational energy level during electronic transition due to the absorption or emission of a photon, describing the organic semiconductor's molecules as a system of coupled oscillators with many normal modes. The energies of the different vibrational modes can be measured by Raman spectroscopy, Fourier Transform Infrared spectroscopy (FTIR) and have an impact on the absorption and fluorescence spectra. Concerning the calculation of the total spin wavefunction, one need just to consider the unpaired electrons of an excited state configuration, since the contribution from the electrons in filled orbitals following the Pauli principle contribute zero to the total spin. Differently from their inorganic counterparts, organic semiconductors are characterized by the existence of well-defined spin states like in isolated molecules as result of the weak electronic delocalization, which have a huge impact on the photophysics of the material. Talking about different spin states of the molecule, we can mainly distinguish between singlet state and triplet state. As shown in Figure \ref{fig:spin}, under the assumption that one electron is in the $\pi^*$ orbital of the molecule and one in the $\pi$ orbital, we can define a singlet state when the electrons are antiparallel and triplet state when parallel. The different excited states are numbered in order of increasing energy as $S_0$, $S_1$ for the singlet, $T_1$ for the triplet, etc.\\
+
+A critical role in the optical and electrical processes of the organic conjugated molecules is played by the so-called \emph{frontier orbitals}: the highest occupied molecular orbital (HOMO) and the lowest unoccupied molecular orbital (LUMO). They are a convenient approximation of the ionization potential (IP) and the electron affinity (EA) since HOMO and LUMO are described by one-electron molecular orbitals and do not consider electron-electron interactions. Indeed, the difference between HOMO and LUMO with the vacuum energy level differ from experimentally measured IP and EA because they are different for free molecules in solid due to the polarization of the environment, leading to a difference in energy of about \SI{1.2}{\electronvolt}. When a transition from HOMO to LUMO occurs, the molecule changes from the ground state to the excited state. If the transition occurs under the excitation of a photon, the energy gap is now an optical gap (Figure \ref{fig:excitation}). Then, the lower is the difference between the energies of HOMO and LUMO, i.e. the band gap, the more easy the molecule can be excited. Compared to $\sigma$ and $\sigma^*$ orbitals, it is the weaker splitting of $\pi$ and $\pi^*$ orbitals and the relatively small band gap that lead to low-energy electronic excitations and, as result, to a semiconductor behaviour. The transition of an electron from the HOMO to the LUMO implies absorption of light (emission for the vice-versa). However, the energy level of an optical excited electron result to be less the LUMO since the Coulomb force bound the electron to the hole left in HOMO, leading to energy difference of several \SI{100}{\milli\electronvolt}. Such Coulomb attractions are significant for organic semiconductors, since the dielectric constant is much lower than the one of inorganic semiconductors. Since the $\pi$-bonding is significantly weaker than the $\sigma$ bonds, the $\pi-\pi^*$ transitions represent the lowest electronic excitations of conjugated molecules with a typical energy gap between \SI{1.5}{\electronvolt} and \SI{3}{\electronvolt}, leading to light absorption or emission in the visible spectral range. By contrast, if the HOMO and LUMO correspond to $\sigma$ orbitals, the optical emission due to $\sigma\rightarrow\sigma^*$ transitions will be in the ultraviolet range. The energy gap of conjugated polymers can be chemically controlled, for example, by varying the degree of conjugation in a molecule, offering a wide range of possibilities to tune the optical and electrical properties of the material as organic semiconductor. \\
+
+
+%////////////////////////////////////////////OPTICAL AND ELECTRICAL PROPERTIES//////////////////////////////////////////////////////////////////////// 	
+	\section{Optical and Electrical properties of Organic Semiconductors}\label{properties}
+	
+Organic semiconductor materials are studied with the aim to be applied to semiconductor devices. The theory concerning inorganic semiconductors devices is useful to explain the photophysical properties of organic semiconductors only partially, and in most of the cases, such concepts do not work. Indeed, the law of physics describing organic semiconductors are the same as the ones used for their inorganic counterparts. Nevertheless, some parameters are deeply different, such as the dielectric constant $\epsilon_r$ representing the macroscopic measure of polarizability of the material at atomic/molecular scale. In fact, in inorganic semiconductors, typical $\epsilon_r$ are of the order of $12$, which means that the interactions between electrons are negligible since the dielectric screening is strong. In contrast, organic semiconductors are characterized by a dielectric constant much smaller, i.e. $\epsilon_r$ meaning that the interactions between electrons cannot be neglected and have a significant impact on the photophysical properties of the material. Such interactions involve the coulomb force between the electron and the hole and the exchange energy between electron pairs with different spin configuration.\\
+
+In inorganic semiconductors, the atoms are strongly bound both by Coulomb force and covalent bonds. As a result, they have broad valence and conduction bands (several \SI{}{\electronvolt} width). Upon optical excitation, an electron is easily promoted from the valence to the conduction band and it immediately become free from the Coulomb attraction with the hole left behind, thanks to the high dielectric screening reducing the range of the Coulomb interaction and to the delocalization of the electron due to to the strong bond between the atoms. The mean scattering length is much larger than the lattice parameter and is much bigger than the coulomb radius. Then, optical excitation create free charge carriers, implying that the optical gap is equivalent to the electrical gap.\\
+In contrast, the molecules in organic semiconductor crystals are bound by weak Van-der-Waals forces and, as a result, the conduction and the valence bands are much narrower (around few \SI{100}{\milli\electronvolt}). The electrons also move in bands like in inorganic semiconductors, but their effective mass is extremely much larger, from $3$ to $100$ times the mass of the electrons in the vacuum, leading to a lower mobility. The mean free path of the electrons is of the order of the lattice constant in organic crystal, meaning that the charge carriers scatter at every atom and the description in terms of band states is not longer reasonable as in inorganic semiconductors, since there is no picture of delocalized electrons in the crystal. The transfer of charge carriers is rather described in terms of incoherent transfer events defined as \emph{hopping transport}. 
+In organic semiconductors, when a charge is placed on a molecule a change in both the geometry of the charged molecule and in the mean distance between neighbouring molecules, leading to a distortion of the crystal lattice as polarization effect and relaxation processes. Then, as the charge carrier moves from a molecule to another, it carries such distortion. The combination of the charge and the lattice distortion give birth to a new concept of charge carrier, the so-called \emph{polaron}. \\
+ 
+
+In inorganic semiconductors such as Silicon and Germanium, which have low energy band gaps of \SI{1.1}{\electronvolt} and \SI{0.67}{\electronvolt} respectively, a small but not negligible amount of free charges can be created by thermal excitation, promoting the electrons from the valence to the conduction band, while a same amount of holes, seen as positive positron-like carriers, is created in the valence band. When a p-n junction is formed between two differently doped inorganic semiconductors, both the charge carriers, i.e. electrons and holes, participate to the conduction of the current. This is at the base of the working principle of all diodes, transistors and all the modern electronics based on inorganic semiconductors. The number density of charge carriers promoted to the conduction band is governed by Fermi-Dirac statistics and strongly depends on the energy gap $E_g$ between the valence and the conduction bands. The interactions between electrons and holes can be considered negligible since the dielectric constant of the material is large, and an electron-hole pair can be created by scattering with an incoming photon at room temperature. Then, inorganic semiconductors are characterized by intrinsic conductivities typically in the range from \SI{e-8}{\per\ohm\per\centi\metre} to \SI{e-2}{\per\ohm\per\centi\metre}.\\
+\begin{figure}[t]
+	\centering%
+	\subfloat[]%
+	{\includegraphics[width=8.5cm, keepaspectratio]{Images_thesis/bandgap}\label{fig:bandgap}}\qquad
+	\subfloat[]%
+	{\includegraphics[width=5.5cm, keepaspectratio]{Images_thesis/opt_excitation}\label{fig:excitation}}\qquad
+	\caption{\footnotesize (a) On the left, the energy band diagram of inorganic semiconductors showing the Fermi level $E_F$, the valence band and the conduction band. On the right, the energy level diagram of organic semiconductors showing the HOMO and LUMO energy levels\cite{book:oled} (b) Schematics of typical energy level positions and values of HOMO and LUMO relatively to the work function $\Phi$ of a metal-based electrode.}%aggiungi ref
+	\label{fig:energygap}
+\end{figure}
+By contrast, organic semiconductors are characterized by an extrinsic conductivity. It can be originated by doping, by dissociation of electron-hole pairs produced by light excitation and by injection of charges from the electrodes. The absorption of light can promote different kind of transitions. In inorganic semiconductors, the strong covalent coupling leads to the predominance of valence-to-conduction-band transitions, while in organic semiconductors, optical absorption create predominantly excited states on individual molecules rather than creating free charge carriers, which is a more complicate process. A scheme of the difference in energy gap between OS and IS is shown in Figure \ref{fig:energygap}. An electron-hole pair created by photo excitation or thermal excitation is bound by a coulomb energy of \SI{0.5}{\electronvolt}-\SI{1}{\electronvolt}. Furthermore, the energy necessary to absorption or emission of a photon is typically in the range of 2-\SI{3}{\electronvolt}, i.e. photon energies corresponding to the visible range. This means that the density of charge carriers produced by thermal excitation at room temperature is unsignificant in organic semiconductors and they definitely differ in behaviour from their inorganic relatives. The details of processes occurring during light excitation and under electric field will be discussed in the following chapters.\\
+
+%___________________LIGHT EXCITATION____________________________________________________
+
+
+	\subsection{Optical excitation and processes}\label{sec:optical}
+
+\paragraph{Photoluminescence.}
+\begin{figure}[t]
+	\centering%
+	\subfloat[]%
+	{\includegraphics[width=6cm, keepaspectratio]{Images_thesis/jacobi}\label{fig:jacobi}}\\
+	\caption{\footnotesize \cite{book:koehler}.}
+	\label{fig:frank}
+\end{figure}
+The majority of organic semiconductors can produce \emph{photoluminescence} (PL) consisting of several processes leading to the absorption of photons under the effect of incoming electromagnetic radiation or excitation by charge-carrier recombination and the subsequent light emission to every direction. From a quantum mechanic point of view, this phenomenon can be described  by considering the excitation to a higher energy level followed by the return to the previous state with the re-emission of a photon. After an electron in an atom is excited by a photon, several relaxation processes may occur implying the emission of new photons. Typically, the time interval between absorption and emission is of the order of \SI{10}{\nano\second} but it may be extended to significantly longer periods. The transitions allowed and the acceptable wavelengths are determined by the laws of quantum mechanics and the electronic configuration of the material considered. The whole mechanism, represented by the \emph{Jablonski-diagram} shown in Figure \ref{fig:jacobi}, is divided into different processes: the radiative ones as \emph{fluorescence} and \emph{phosphorescence} and no-radiative processes like intersystem crossing and internal conversion. Such processes determine the decay paths of the excited states in the molecule. Fluorescence is typically a very fast radiative decay process where the emitted photon has a lower energy than the energy of one absorbed due to dissipation. This process is also characterized by the conservation of the spin, where the excited singlet state $S_1$ decay to the ground state $S_0$, with a lifetime in the range of ns. Phosphorescence is, like fluorescence, a form of luminescence. This is a radiative, not spin-conserving decay of the excited triplet state $T_1$ to the ground state $S_0$ and occurs when an electron, having absorbed a photon, undergo intersystem crossing by changing spin multiplicity. The intersystem crossing in phosphorescent emitter systems lead to high external quantum efficiencies. The relaxation of the electron back to the lower singlet state energy is quantum mechanically forbidden, making the transition much slower than the others. As anticipated in chapter \ref{sec:electronic}, the most important process occurring in $\pi$-conjugated semiconductors which is useful for optoelectronic applications is the transition of electrons from HOMO to LUMO corresponding to the state transition $S_0\rightarrow S_1$. The mathematical formalism for describing the absorption and emission spectra is the \emph{Frank-Condon-Progression}. In this formalism, an optical transition can occur to different vibrational levels for several normal modes. The resulting emission spectrum is the result of a superposition of these transitions. This principle holds only under the assumptions: optical transitions are of several order of magnitudes faster than the duration of a vibration, that means that the optical transition occurs vertically; the potential at the excited state is the same as the potential at the ground state. Absorption and emission mechanisms occur according to the so-called \emph{Frank-Condon principle} schematized in Figure \ref{fig:frank}. There, $S_0$ represents the electronic ground state, $S_1$ the first electronic excited state, $Q_0$ and $Q_1$ the equilibrium conformation for $S_0$ and $S_1$ respectively and $\Delta Q$ the conformational change due to excitation. Optical transitions take place between the ground state and the excited state potential energy curves. Dependencies of fluorescence emission from the dimensions of the $\pi$-system have been experimentally found (ref). The more expanded the $pi$-system, the smaller is the energy gap between HOMO and LUMO and then the lower the energy of the fluorescence emission. Moreover, the extension of the $\pi$-system increases with the interactions between conjugated units is stronger.\\
+\begin{figure}[!t]
+	\centering%
+	\subfloat[]%
+	{\includegraphics[width=8.5cm, keepaspectratio]{Images_thesis/Frank-Condon}\label{fig:frank}}\\
+	\caption{\footnotesize Pictures taken from  ref representing curves of potential energy of a molecule as function of the displacement. The different vibrational levels of the molecule are indicated as $\nu'$ and $\nu''$. The process is divided into different steps: 1. The absorption of a photon occurs through a vertical optical transition, promoting electrons from the ground state to the the excited state; 2. Molecular vibrations causes thermalization; 3. After the lifetime of the excited state, new photons are emitted through vertical optical transition; 4. Thermalization takes place again at the ground state.}
+	\label{fig:frank}
+\end{figure}
+Typical absorption and emission spectra of an organic semiconductor are shown in Figure. It is meaningful observe that the absorption spectrum is characterized by a broad curve with a weak onset, while the emission spectrum is Stokes-shifted and present a more pronounced fine structure. The Stokes shift is the difference between the maximum positions of the two spectra related to the same electronic transition. The shift indicates that the emitted photon possesses a lower energy than the absorbed photon. This is the reflection of the electronic structure and the intramolecular vibrations and relaxation. Under incoming electromagnetic radiation at a fixed energy, the excited states will be populated and, in an absorption experiment, this results in a broadened absorption spectrum with Gaussian behaviour. After excitation and diffusion, the energy distribution of the excitations shifts to lower energies and become more narrow and structured compared to the absorption spectrum. Because of Stokes shift, the strong self-absorption is rarely observed in organic semiconductors. When measuring absorption or fluorescence, one is interested in the colour of the light absorbed and emitted, which can be extracted by the spectra given as a function of the wavelength $\lambda$ and knowing that the energy of a photon can be written as $E=hc/\lambda$.\\
+\begin{figure}[t]
+	\centering%
+	\subfloat[]%
+	{\includegraphics[width=8cm, keepaspectratio]{Images_thesis/spectra}\label{fig:spectra}}\\
+	\caption{\footnotesize Pictures taken from ref example of absorption and emission spectra of organic semiconductors.}
+	\label{fig:frank}
+\end{figure}
+
+
+\paragraph{Optical Charge Generation.}
+
+In inorganic semiconductors, photoconduction occurs when an incoming photon gas an energy exceeding the band gap energy of the material. By contrast, organic semiconductors need photons with an energy larger than the energy required for populating excited states in order to create free charge carriers. The part of the molecule that can absorb light is named \emph{chromophore} and it can consists in either the $\pi$-conjugated core of the molecule or a coherent part in the $\pi$-conjugated polymer chain. In this context, the free charge carriers are quasi-particles called \emph{excitons} represented by an electron and a hole interacting with each other via Coulomb attraction. This feature leads to the application of organic semiconductors to the world of optoelectronics. The Coulomb interaction is much stronger in organic semiconductors with respect to their inorganic in organic counterparts, giving rise to polarization effects within the material. Excitons move within the material transporting energy but not charge. In the case of inorganic semiconductors, the exciton binding energy is of the order of thermal energy at room temperature, while for organic semiconductors it is much larger. In this context, the exciton binding energy is an important quantity and it is defined as $E_B=E_{el}-E_{opt}$, i.e. the difference between the electrical gap and the optical gap, given by the difference between the ionization potential and the electron affinity and the energy of the singlet excited state $S_1$ respectively. In organic materials, excitons are represented by the so-called \emph{Frenkel excitons} consisting in an electron-hole pair within the same molecule. For organic crystals, \emph{charge transfer excitons} are common, where the distance between the electron and the hole is larger, i.e. 1-2 times the distance between the molecules. Since organic crystals are not isotropic, then excitons lead to polarization.\\ 
+There are several energy transfer mechanisms and processes occurring in organic semiconductors. The easiest way to transfer energy consists in the emission and re-absorption of photons that transmit energy to the material with a range limited by the order of the diffusion length of the photon. Another way is called \emph{F\"{o}rster transfer} and it is given by the electric field between dipoles and dipole-dipole interactions. This energy transfer depends on the distance between the molecules and takes place between singlet states only. The typical range for such interactions is less of the order of \SI{50}{\angstrom}. The third process is represented by the tunneling of charge carriers and it is called \emph{Dexter transfer}. It depends on the distance between the molecules and the overlap of their wavefunctions. The scale of this process is confined by \SI{10}{\angstrom} and it can takes place also between triplet states. If the material is composed by all the same molecules, these energy transfer processes can lead to a cascade effect so as the energy migration can be considered as a diffusion of several \SI{10}{\nano\meter}. In organic solids, charge carriers can be generated by dissociation of excitons by optical excitation. The process of dissociation is traditionally explained by the \emph{Onsager model}\cite{art:onsager}, according to which the photogeneration of charge carriers consists in several steps. As shown in Figure \ref{fig:carriers}, the charge photogeneration occurs through an intermediate state of geminate electron-hole pairs (GP), i.e. not free electrons and holes separated to a distance $r_0$ bound by the Coulomb force within the molecule, or charge transfer states (CT). 
+\begin{figure}[t]
+	\centering%
+	\subfloat[]%
+	{\includegraphics[width=8cm, keepaspectratio]{Images_thesis/onsager}\label{fig:onsager}}\quad
+	\subfloat[]%
+	{\includegraphics[width=10cm, keepaspectratio]{Images_thesis/optical_gen}\label{fig:optical_carriers}}\\
+		\caption{\footnotesize Diagrams of photophysical processes involved in photogeneration of charge in a typical organic photoconductor. (a)\cite{art:onsager} (b).}
+	\label{fig:carriers}
+\end{figure}
+As shown in the diagram, when the incident light is absorbed, the transition $S_0\rightarrow S_1$ generates a Frenkel exciton, but there is not photogeneration of free charge carriers. A Frank-Condon exciton at the excited state $S^*$, after autoionization, i.e. when the excited state transfer a charge onto another not-occupied energy level of the neighbouring molecule, may diffuse through the organic semiconductor and dissipates energy by scattering with the material, decaying either to a thermalized bound e-h pair or reaching the state $S_1$ via internal conversion and vibrational relaxation. Afterwards, it decays to the ground state $S_0$ by either fluorescence or non-radiative process. The geminate pair of opposite charges created can separate until they are out of ten radius of their mutual Coulomb attraction, turning into two free charge carriers. The e-h pair is usually made free by processes thermally activated and may dissociate with an escape probability $\Omega$. The two mobile charges drift and diffuse through the semiconductor film until they are collected at the electrodes or recombine and generate the state $S_1$ with a probability R. In many organic semiconductors, \emph{Langevin recombination} is observed. The limit for recombination is represented by the Coulomb radius, so as the electron-hole pairs having a separation smaller than that radius will recombine. The efficiency of charge photogeneration is then defined by $\eta=\eta_0\Omega$, where $\eta_0$ represent the primary yield of geminate pair formation and it is independent of the electric field. Then, the charge photogeneration process is controlled by the dependence of the electric field from the escape probability. Indeed, the more the electric field applied to the sample increase, the higher the number of free charge carriers produced. Furthermore, the number of excitons at $S_1$ state decreases. Indeed, it has been experimentally observed that the photocurrent and electric-field quenches photoluminescence and vice versa\cite{ref:onsager}.
+
+%___________________APPLIED VOLTAGE____________________________________________________
+	\subsection{Electrical Processes under External Electric Field}\label{sec:electrical}
+
+The operation of a typical organic semiconductor device require the transport of charge carriers, i.e. electrons and holes, moving from one molecule to another. The main processes involved in the transport are \emph{reduction} and \emph{oxidation}, involving the change in the energy of the neutral molecules. Reduction occurs when an electron is added to a molecule in the neutral ground state, causing the ionization of the molecule which become a radical anion. Inversely, oxidation takes place when the electron is taken away from the molecule, corresponding to adding an hole to the molecule and creating a radical cation. In chapter \ref{sec:optical}, we have already discussed a common way to produce charged molecules, that is light absorption leading to the creation of a pair of adjacent radical cation and anion. In this chapter, we will discuss about a typical method to create charged chromophores consisting in \emph{charge injection} from an electrode into a diode structure. In such method, the electric properties of the materials involved play a fundamental role in the creation of a current, as well as the type of contact at the interface between the organic semiconductor and the electrodes. Indeed, undoped organic semiconductors are rather insulators than semiconductors unless charge carriers are injected from the electrodes or generated within the material by light excitation.\\
+
+\paragraph{Contact formation and Injection.} The contact formation at interfaces consists in a physical process based on the \emph{Onsager theory} for thermodynamics of irreversible processes. According to the theory, the electric current is given by three different currents: diffusion, drift and thermodiffusion. When two materials of different chemical potential are brought in contact, charge will be transferred over the interface, giving a diffusion current. Such current leads to space charges at the interface, creating an electric field that leads to a drift current opposite to the diffusion. In thermodynamic equilibrium, these currents are equal. This also means that the difference in chemical potential is balanced by the build up electrical potential. The density of charges is a function of the electric potential and it is governed by the \emph{Poisson's equation}. Given two different materials A and B, the potential difference between A and B also called \emph{contact potential} corresponds to the difference of their work functions $\Phi_A$ and $\Phi_B$. The lower the intrinsic charge carrier density, the more extended the space-charge region, and outside the space-charge region the distance between band edges and the Fermi level is the same before and after the contact. In case of metals, the electron density is very high and the space-charge region leads to the screening of the degenerate electron gas. One metallic monolayer is already enough to fully screen the other charges. In contrast, the screening length of semiconductors can be extremely long and can exceed the thickness of the layer in film films devices. In the case of insulators, being the charge density very small, the space-charge region is very extended, giving birth to a built-in constant electric field. In systems with several interfaces, such as the anode-semiconductor-cathode configuration, each interface has a contact potential determined by the work functions of the materials involved at that particular interface. Then, the external net potential difference will be the sum of the contact potentials of all the interfaces and depends only on the work functions of the electrodes. If the materials for anode and the cathode are the same, then it is not possible to measure the contact voltage directly, since the net potential difference is zero. In this case, no short circuit current will flow and all the deviations from this are errors on the measurement, or means that the system is not at thermodynamic equilibrium.\\
+
+We can distinguish between several types of contacts among metal/semiconductor interfaces: the \emph{Schottky} contact, the \emph{Ohmic} contact and the \emph{Neutral} contact. The first one is mainly obtained in doped semiconductors and imply a charge-carrier density of the semiconductor smaller than in bulk. The Schottky potential barrier blocks the injection of charges and limits the current. Such barrier depend on the work function of the metal, and injection occurs mainly via thermal excitation and tunneling. In contrast, the Ohmic contact is mainly obtained in intrinsic semiconductors and imply a charge-carrier density in the semiconductor higher than in the bulk. This make the contact a charge carrier reservoir, but do not imply necessarily a linear I-V characteristic. In the case of neutral contact, the hardest contact to achieve, the charge carrier density in the semiconductor is the same as the one in the bulk, implying no space charges and no band bending. In the world of organic devices, an ohmic contact is preferred when a substantial deliverance of charge carriers to the organic material is required. For all the cases of non-ohmic contacts, the current is injection-limited since the charge carriers have to overcome the Schottky potential barrier. In organic semiconductors, hot carriers are not observed since they thermalize very fast. As consequence, all the carriers injected into the Schottky potential are attracted to the injecting metal, leading to a back flow of carriers to the electrode and subsequent \emph{surface recombination}. When diffusion occurs, charge carriers are transferred to the organic semiconductor thanks to the alignment of the electrochemical potential, creating a self-induced electric field acting as charge carrier reservoir close to the contact, blocking a further injection of the charges deep into the semiconductor.\\ 
+\begin{figure}[t]
+	\centering%
+	\subfloat[]%
+	{\includegraphics[width=5cm, keepaspectratio]{Images_thesis/contact1}\label{fig:contact1}}\qquad
+	\subfloat[]%
+	{\includegraphics[width=5cm, keepaspectratio]{Images_thesis/contact2}\label{fig:contact2}}\qquad
+	\caption{\footnotesize Schematics of charge injection into an organic semiconductor put in contact with an anode and cathode with work functions $\Phi_A$ and $\Phi_B$ respectively. (a) In the ideal case, an electron can move from the Fermi level of the cathode to the lower LUMO of the organic semiconductor and an hole can be injected from the anode to the HOMO level, corresponding to the transfer of an electron from the HOMO to the anode. (b) In the typical experimental case, the injection of both electrons and holes is limited by potential barriers\cite{book:koehler}.}
+	\label{fig:contacts}
+\end{figure}
+
+A current flow is established only with the application of an external electric field allowing the extraction of the charge carriers from the reservoir and injected into the bulk of the semiconductor. For intrinsic semiconductors, depending on the current and the potential barriers at the contact, the carrier reservoir can be exhausted at low voltages, causing contact limitation. In order to have an efficient charge carrier injection, the Schottky potential barrier should be small. Then, the aim is to get ohmic contacts in order to avoid a limitation of the injection process. For ideal electron injection, represented in Figure \ref{fig:contacts}, the cathode (the electron injecting electrode) need to have a low work function in order to be equal or higher to the LUMO level of the organic semiconductor. Nevertheless, low work function materials show also high chemical reactivity and oxidation is very common. In order to avoid oxidation, material such as aluminium, that is much less reactive, are typically used for the cathode. Similarly, the anode (the hole injection electrode) should be equal or lower than than the HOMO level of the semiconductor, i.e. the anode materials are required to have large work functions. Typical materials used for the anode are Silver, Gold and Platinum. Often, a dipole layer is created at the interface between the electrode and the semiconductor, leading to a change in the injection barrier. Nevertheless, thin dipole layers can result to be beneficial for the charge carrier injection.\\
+
+\paragraph{Conductivity and Mobility.} Once charges are injected into the semiconductor, they will move as a current flow under the effect of both the electric field and the difference of concentration of the charge carriers indicated with $n$. Then, the overall current is given by the sum of a \emph{drift} part and a \emph{diffusion} term, given by $j = q n \mu F - q D  n$, where $q$ is the elementary charge, $\mu$ is the \emph{charge carrier mobility} and $F$ is the unit electric field. In organic semiconductors, the current is dominated by drift and only in some cases the diffusion is significant. A key parameter giving information about the motion of the charge carriers is their mobility, defined as
+\begin{equation}
+\mu = \frac{v_{drift}}{F}
+\label{eq:mobility}
+\end{equation}
+where $v_{drift}$ is the drift velocity. In general, the mobility $\mu$ can depend on the electric field. The current density is given by the number of charges
+
+The principal difference between insulators and semiconductors is described the \emph{conductivity} $\sigma$ of the material. The conductivity is expressed as
+\begin{equation}
+\sigma = q \mu n
+\label{eq:cond}
+\end{equation}
+
+
+In traditional undoped inorganic semiconductors such as silicon and germanium, typical values of the conductivity are in between \SI{e-8}{} and \SI{e-2}{\per\ohm\per\centi\meter}, while for insulators as undoped organic materials is typically in between \SI{e-7} and \SI{e-18}{\per\ohm\per\centi\meter}. As equation \ref{eq:cond} shows, the low conductivity of intrinsic organic semiconductors can be related to either the carrier density or the charge carrier mobility. In an undoped solid, the carrier density is described by
+\begin{equation}
+n \approx Nexp\Big(-\frac{E_G}{2k_BT}\Big)
+\label{eq:density}
+\end{equation}
+For crystalline undoped silicon at room temperature, the carrier density is of the order of \SI{e10}{\per\centi\meter\cubed} thanks to the low band gap of \SI{1.1}{\electronvolt} and the mobility is given by \SI{1000}{\centi\meter\squared\per\volt\per\second}. In organic semiconductors, since the band gap is usually larger than \SI{2}{\electronvolt}, the carrier density is very low and it is of the order of \SI{10}{\per\centi\meter\cubed} and the mobility of around \SI{1}{\centi\meter\squared\per\volt\per\second}. In general, for organic semiconductors, the conductivity is very low and the conductance is often determined by extrinsic charge carriers given by doping or injection from the electrodes. Indeed, for carrier enriched organic semiconductors, the mobility is typically larger. 
+
+\paragraph{Charge-carrier transport} 
+
+
+%////////////////////////////////////////////CRYSTALS//////////////////////////////////////////////////////////////////////// 	
+	\section{Crystalline conjugated polymers}
+	%solid state structure, PS
+	%diode eq!
+%///////////////////////////////////////ANISOTROPY//////////////////////////////////////////////////////////////////////
+	\section{Anisotropy in Organic Semiconductors}
+	%PL, absorbance, charge transport, dichroic ratio, photocurrent....
+	
+%////////////////////////////////////////////METHODS FOR ALIGNMENT//////////////////////////////////////////////////////////////////////// 	
+	\section{Methods fo Alignment}{sec:methods}
+	%explain nucleation and epitaxial growth and all the different cases that we can find in the coating process
+	%degree of crystallinity, spectroscopy
+	%properties of semicrystalline polymers
+	It has been shown that the preferential orientation of the polymer chains increases the charge mobility in both the parallel and the normal direction with respect to the orientation axis.
+		
+		\subsection{Impact on the Electrical and Optical Properties}
+		
+		\subsection{Polarization}
+		
+		
+		
+		
+%-----------------------------------------EXPERIMENTAL METHODS------------------------------------------------ 	
+		
+\chapter{Methods and experimental details}\label{cha:experimental}
+	\section{Materials}
+	\section{Blade Coating}
+	\section{Optical characterization}
+	%microscope, sensofar, dektak, afm
+	\section{Electrical characterization}
+	%evaporator, instrument for resistance and conductivity
+	\section{Spectroscopy}
+	%spectrometer
+	
+%-----------------------------------------RESULTS AND DUSCUSSION------------------------------------------------  
+  \newpage
+  \chapter{Results and Discussion}\label{cha:results}
+	\section{Polystyrene}
+		\subsection{sdf}
+		\subsection{efv}
+		\subsection{v}
+		%all the experiments....
+		\subsection{Other Published Data}
+		\subsection{Discussion}
+	
+	\section{DPP-DTT}
+		\subsection{Morphology of the films}
+		\subsection{Optical Properties}
+		\subsection{Electrical Properties}
+		\subsection{Other Published Data}
+		\subsection{Discussion}
+	%.........altri??
+  %-----------------------------------------CONCLUSIONS------------------------------------------------  
+  \newpage
+  \chapter{Conclusions and Outlook}\label{cha:conclusions}
+
+
+
+
+
+  \part{Appendix}
+  \begin{appendix}
+  
+    \chapter{Lists}
+    \listoffigures
+    \listoftables
+      
+   % \nocite{*}
+    %\citestyle{egu}
+    \bibliographystyle{plain}
+    \bibliography{references}
+    
+    \include{deposition}
+    
+  \end{appendix}
+  
+\end{document}
